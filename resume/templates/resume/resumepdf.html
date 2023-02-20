@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Resume</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static 'resume/css/bootstrap.css' %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static 'resume/css/fontawesome.css' %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static 'resume/css/style.css' %}'>
+    <script src='{% static 'resume/js/bootstrap.js' %}'></script>
+    <script src='{% static 'resume/js/jquery.js' %}'></script>
+    <script src='{% static 'resume/js/main.js' %}'></script>
+    <script src='{% static 'resume/js/popper.js' %}'></script>
+</head>
+<body>
+    <style>
+.profile {
+ 
+ margin-left: 150px;
+ margin-bottom: 20px;
+}
+
+.profile img {
+ border: 2px groove yellow;
+ margin-bottom: 50px;
+ height: 240px;
+ width: 200px;
+ 
+}
+.objective {
+ margin-top: 100px;
+}
+
+.container {
+
+    position: fixed;
+}
+.container h1 {
+ color: rgb(105, 105, 199);
+ font-size: 25px;
+ font-family: cursive;
+
+}
+.container h4 {
+ color: rgb(99, 170, 81);
+ padding-left: 20px;
+ font-family: cursive;
+ font-style: oblique;
+}
+.container p {
+ font-size: smaller;
+ font-family: 'Times New Roman', Times, serif;
+}
+.container li {
+ font-size: smaller;
+ font-family: 'Times New Roman', Times, serif;
+}
+    </style>
+<div class="container" shadow>
+<div class="row">
+    <div class="col col-md-8">
+        <div class="profile">
+            <img height="240px" width="200px" src="{{per.image.path}}" class="img-thumbnail" alt="">
+            <h1>LOCATION</h1>
+            <p>{{per.address1}}</p>
+            <h1>PHONE</h1>
+            <p>{{per.mobile}}</p>
+            <h1>EMAIL</h1>
+            <p>{{per.email}}</p>
+        </div><br><br>
+        <div class="objective">
+            <h1>OBJECTIVES</h1>
+            <p>{{per.objective}}</p>
+        </div>
+    </div>
+    <div class="col col-md-4">
+        <div class="heading">
+            <h1>{{per.fullname}}</h1>
+            <h4>{{per.jobtitle}}</h4>
+        </div>
+
+        <div class="education">
+            <h1>EDUCATION</h1>
+            <ul>{% if per.see %}
+                <li>{{per.see}}, [{{per.passyear1}}]</li>
+                {% else %}
+
+                {% endif %}
+
+                {% if per.inter %}
+                <li>{{per.inter}}, [{{per.passyear2}}]</li>
+                {% else %}
+
+                {% endif %}
+
+                {% if per.bachelor %}
+                <li>{{per.bachelor}}, [{{per.passyear3}}]</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.master %}
+                <li>{{per.master}}, [{{per.passyear4}}]</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.phd %}
+                <li>{{per.phd}}, [{{per.passyear5}}]</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.other %}
+                <li>{{per.other}}, [{{per.passyear6}}]</li>
+                {% else %}
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="education">
+            <h1>WORK EXPERIENCE</h1>
+            <ul>{% if per.jobtitle %}
+                <li>{{per.jobtitle}}, [{{per.startdate}}] to [{{per.enddate}}]</li>
+                <p>Resposbility: {{per.responbility}}</p>
+                {% else %}
+                {% endif %}
+
+                {% if per.jobtitle2 %}
+                <li>{{per.jobtitle2}}, [{{per.startdate2}}] to [{{per.enddate2}}]</li>
+                <p>Resposbility: {{per.responbility2}}</p>
+                {% else %}
+                {% endif %}
+
+                {% if per.jobtitle2 %}
+                <li>{{per.jobtitle3}}, [{{per.startdate3}}] to [{{per.enddate3}}]</li>
+                <p>Resposbility: {{per.responbility3}}</p>
+                {% else %}
+                {% endif %}
+            </ul>
+        </div>
+            
+        <div class="detail">
+            <h1>PERSONAL DETAILS INFORMATION</h1>
+            <li>Date Of Birth: {{per.date_of_birth}}</li>
+            <li>Father’s Name: {{per.father_name}}</li>
+            <li>Mother’s Name: {{per.mother_name}}</li>
+            <li>Gender: {{per.sex}}</li>
+            <li>Marital Status: {{per.marrital_status}}</li>
+            <li>Nationality: {{per.nationality}}</li>
+            <li>Hobbies: {{per.Hobbies}}</li>
+        </div>
+
+        <div class="experience">
+            <h1>SKILLS</h1>
+            <ul>{% if per.skill %}
+                <li>{{per.skill}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill2 %}
+                <li>{{per.skill2}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill3 %}
+                <li>{{per.skill3}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill4 %}
+                <li>{{per.skill4}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill5 %}
+                <li>{{per.skill5}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill6 %}
+                <li>{{per.skill6}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill7 %}
+                <li>{{per.skill7}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill8 %}
+                <li>{{per.skill8}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill9 %}
+                <li>{{per.skill9}}</li>
+                {% else %}
+                {% endif %}
+
+                {% if per.skill10 %}
+                <li>{{per.skill10}}</li>
+                {% else %}
+                {% endif %}
+            </ul>
+        <div class="declaration">
+            <h1>DECLARATION</h1>
+                <P>{{per.declaration}}</P>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

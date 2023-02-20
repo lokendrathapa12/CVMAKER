@@ -1,0 +1,34 @@
+{% extends 'resume/base.html' %}
+{% block content %}
+{% if messages %}
+    {% for msg in messages %}
+    {{msg.label_tag}} {{msg}} {{msg.errors|striptags}}<br><br>
+    {% endfor %}
+{% endif %}
+{% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        {{error.label_tag}} {{error}} {{error.errors|striptags}}
+    {% endfor %}
+{% endif %}
+<div class="title">
+    <h1 class="display-1">Education Form</h1>
+</div>
+        <div class="container">
+            <form class="needs-validation," method="POST" novalidate>
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        {% for form in form %}
+                            {{form.label_tag}} {{form}} {{form.errors}}<br><br>
+                        {% endfor %}
+                        <div class="row">
+                            <div class="col-sm-4 mb-3">
+                                <input type="submit" class="btn btn-success" value="Save">
+                                <a class="btn btn-primary" href="{% url 'skillformpage' %}" role="button">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+{% endblock %}

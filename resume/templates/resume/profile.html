@@ -1,0 +1,10 @@
+{% extends 'resume/base.html' %}
+{% block content %}
+<div class="main">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <p class="ptext">Create your Own CV</p>
+      <a class="btn btn-primary" href="{% url 'personalformpage' %}" role="button">Start</a>
+    </div>
+  </div>
+    <a href="{% url 'personalformpage' %}">Personal Form</a>
+{% endblock content %}

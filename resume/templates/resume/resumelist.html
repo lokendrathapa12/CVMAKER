@@ -1,0 +1,21 @@
+{% extends 'resume/base.html' %}
+{% block content %}
+{% if messages %}
+    {% for msg in messages %}
+    {{msg.label_tag}} {{msg}} {{msg.errors|striptags}}<br><br>
+    {% endfor %}
+{% endif %}
+{% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        {{error.label_tag}} {{error}} {{error.errors|striptags}}
+    {% endfor %}
+{% endif %}
+<div class="title">
+    <h1 class="display-1">List of Resume user</h1>
+</div>
+        <div class="container">
+            {% for cv in cvlist %}
+                <ul><a href="{% url 'resumepage' cv.id %}">{{cv.fullname}}</a></ul><br><br>
+            {% endfor %}
+        </div>
+{% endblock %}
